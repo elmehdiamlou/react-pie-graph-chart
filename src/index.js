@@ -34,10 +34,9 @@ const StyledPieChart = styled.div`
     align-items: center;
   }
   .chart_dot {
-    font-size: 65px;
+    font-size: 34px;
     line-height: 0;
     margin-right: 5px;
-    margin-top: -3px;
   }
 `;
 
