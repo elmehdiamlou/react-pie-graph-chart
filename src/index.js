@@ -40,12 +40,12 @@ const StyledPieChart = styled.div`
   }
 `;
 
-const oneDemi = 1.5;
+const oneDemi = 1.65;
 const two = 2;
 const ten = 10;
 const twenty = 20;
 const thirty = 30;
-const fourty = 40;
+const fourty = 41;
 const thousand = 100;
 
 const circleDegrees = 360;
@@ -71,7 +71,7 @@ const PieChart = ({ data }) => {
     return (sum * circleDegrees) / total;
   };
 
-  const calcPercent = (value) => Math.floor((value * thousand) / total);
+  const calcPercent = (value) => Math.floor(((value * thousand) / total) * thousand) / thousand;
 
   const rgbToHex = (colorPart) => {
     const hex = colorPart.toString(hexRadix);
@@ -141,22 +141,22 @@ const PieChart = ({ data }) => {
             );
             toolTipContext.fillStyle = "#130F26";
             toolTipContext.fillRect(
-              X - fourty / two - soustraction[0],
+              X - fourty / two - soustraction[0] - twenty,
               Y - thirty - soustraction[1],
               width + fourty,
               fourty
             );
             toolTipContext.beginPath();
             toolTipContext.moveTo(
-              X - fourty / two - thirty + width / oneDemi,
+              X - fourty / two - thirty + width / oneDemi - twenty,
               Y - two * two
             );
             toolTipContext.lineTo(
-              X - fourty / two - ten + width / oneDemi,
+              X - fourty / two - ten + width / oneDemi - twenty,
               Y - two * two
             );
             toolTipContext.lineTo(
-              X - fourty / two - twenty + width / oneDemi,
+              X - fourty / two - twenty + width / oneDemi - twenty,
               Y + ten - two * two
             );
             toolTipContext.fill();
@@ -164,8 +164,8 @@ const PieChart = ({ data }) => {
             toolTipContext.fillStyle = "#fff";
             toolTipContext.fillText(
               txt,
-              X - soustraction[0],
-              Y - soustraction[1]
+              X - soustraction[0] - twenty + oneDemi,
+              Y - soustraction[1] + 1.5
             );
             toolTipContext.stroke();
             chartCanvas.style.cursor = "none";

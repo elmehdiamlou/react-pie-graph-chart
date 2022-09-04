@@ -25,12 +25,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var StyledPieChart = _styledComponents["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  gap: 40px;\n\n  .canvas_container {\n    position: relative;\n  }\n  .canvas_chart {\n    height: 250px;\n    width: 250px;\n    margin-block: 25px;\n  }\n  .canvas_tooltip {\n    position: absolute;\n    left: 0;\n    height: 250px;\n    width: 250px;\n    margin-block: 25px;\n    pointer-events: none;\n  }\n  .chart_keys {\n    margin-block: auto;\n  }\n  .chart_text {\n    height: fit-content;\n    margin-bottom: 5px;\n    font-size: 13px;\n    display: flex;\n    align-items: center;\n  }\n  .chart_dot {\n    font-size: 34px;\n    line-height: 0;\n    margin-right: 5px;\n  }\n"])));
 
-var oneDemi = 1.5;
+var oneDemi = 1.65;
 var two = 2;
 var ten = 10;
 var twenty = 20;
 var thirty = 30;
-var fourty = 40;
+var fourty = 41;
 var thousand = 100;
 var circleDegrees = 360;
 var hexRadix = 16;
@@ -61,7 +61,7 @@ var PieChart = function PieChart(_ref) {
   };
 
   var calcPercent = function calcPercent(value) {
-    return Math.floor(value * thousand / total);
+    return Math.floor(value * thousand / total * thousand) / thousand;
   };
 
   var rgbToHex = function rgbToHex(colorPart) {
@@ -122,15 +122,15 @@ var PieChart = function PieChart(_ref) {
 
           toolTipContext.clearRect(0, 0, toolTipCanvas.width, toolTipCanvas.height);
           toolTipContext.fillStyle = "#130F26";
-          toolTipContext.fillRect(X - fourty / two - soustraction[0], Y - thirty - soustraction[1], width + fourty, fourty);
+          toolTipContext.fillRect(X - fourty / two - soustraction[0] - twenty, Y - thirty - soustraction[1], width + fourty, fourty);
           toolTipContext.beginPath();
-          toolTipContext.moveTo(X - fourty / two - thirty + width / oneDemi, Y - two * two);
-          toolTipContext.lineTo(X - fourty / two - ten + width / oneDemi, Y - two * two);
-          toolTipContext.lineTo(X - fourty / two - twenty + width / oneDemi, Y + ten - two * two);
+          toolTipContext.moveTo(X - fourty / two - thirty + width / oneDemi - twenty, Y - two * two);
+          toolTipContext.lineTo(X - fourty / two - ten + width / oneDemi - twenty, Y - two * two);
+          toolTipContext.lineTo(X - fourty / two - twenty + width / oneDemi - twenty, Y + ten - two * two);
           toolTipContext.fill();
           toolTipContext.font = "bold 30px Arial";
           toolTipContext.fillStyle = "#fff";
-          toolTipContext.fillText(txt, X - soustraction[0], Y - soustraction[1]);
+          toolTipContext.fillText(txt, X - soustraction[0] - twenty + oneDemi, Y - soustraction[1] + 1.5);
           toolTipContext.stroke();
           chartCanvas.style.cursor = "none";
         } else {
