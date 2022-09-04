@@ -1,6 +1,6 @@
 {
   "name": "react-pie-graph-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A pie chart represented with relative frequencies",
   "main": "index.js",
   "scripts": {
