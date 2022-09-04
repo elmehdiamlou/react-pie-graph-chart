@@ -1,6 +1,6 @@
 # React Pie Graph Chart
 
-<p align="center"><a href="https://www.npmjs.com/package/react-pie-graph-chart" target="_blank"><img src="https://user-images.githubusercontent.com/90270530/168449891-bf06b1a7-0635-4660-8b6e-2a7ac7e7ac48.png" width="400"></a></p>
+<p align="center"><a href="https://www.npmjs.com/package/react-pie-graph-chart" target="_blank"><img src="https://user-images.githubusercontent.com/90270530/188328352-0754a332-8e5e-44fd-93c4-c0848d213eec.png" width="400"></a></p>
 
 <br>
 
