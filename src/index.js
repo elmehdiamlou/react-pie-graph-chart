@@ -189,7 +189,7 @@ const PieChart = ({ data }) => {
       drawSegment(index);
     });
     drawTooltip();
-  }, []);
+  }, [total]);
 
   return (
     <StyledPieChart>
